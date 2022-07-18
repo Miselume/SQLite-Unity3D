@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody rb;
-    private float xAxis, yAxis;
+    private float xAxis, zAxis;
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +18,11 @@ public class Movement : MonoBehaviour
     void Update()
     {
         xAxis = Input.GetAxis("Horizontal");
-        yAxis = Input.GetAxis("Vertical");
+        zAxis = Input.GetAxis("Vertical");
     }
 
     void FixedUpdate()
     {
-        rb.velocity = new Vector3(xAxis, rb.velocity.y, yAxis);
+        rb.velocity = new Vector3(xAxis, rb.velocity.y, zAxis);
     }
 }
